@@ -1,31 +1,38 @@
 'use client';
 import { motion } from 'framer-motion';
 import { Briefcase, FileText, Scale, Users } from 'lucide-react';
+import { ReactNode } from 'react';
 
-const services = [
+interface Service {
+  title: string;
+  icon: ReactNode;
+  description: string;
+}
+
+const services: Service[] = [
   {
-    title: 'Litiges & Contentieux',
+    title: "Litiges & Contentieux",
     icon: <Scale className="w-8 h-8 text-[#c4a46a]" />,
     description:
-      'Représentation stratégique dans les procédures juridiques complexes, défense rigoureuse de vos intérêts.',
+      "Représentation stratégique dans les procédures juridiques complexes, défense rigoureuse de vos intérêts.",
   },
   {
-    title: 'Accompagnement des entreprises',
+    title: "Accompagnement des entreprises",
     icon: <Briefcase className="w-8 h-8 text-[#c4a46a]" />,
     description:
-      'Conseil juridique sur-mesure pour PME et grandes structures dans leurs prises de décisions stratégiques.',
+      "Conseil juridique sur-mesure pour PME et grandes structures dans leurs prises de décisions stratégiques.",
   },
   {
-    title: 'Droit du travail',
+    title: "Droit du travail",
     icon: <Users className="w-8 h-8 text-[#c4a46a]" />,
     description:
-      'Conseil et défense en droit du travail pour employeurs et salariés. Contrats, licenciements, litiges.',
+      "Conseil et défense en droit du travail pour employeurs et salariés. Contrats, licenciements, litiges.",
   },
   {
-    title: 'Rédaction de contrats',
+    title: "Rédaction de contrats",
     icon: <FileText className="w-8 h-8 text-[#c4a46a]" />,
     description:
-      'Rédaction et relecture de contrats personnalisés, clairs et juridiquement solides.',
+      "Rédaction et relecture de contrats personnalisés, clairs et juridiquement solides.",
   },
 ];
 
@@ -34,7 +41,7 @@ export default function Services() {
     <section className="bg-[#f9f9f9] text-[#002b45] py-20 px-6" id="services">
       <div className="max-w-6xl mx-auto text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold">
-          Nos <span className="text-[#c4a46a]">domaines d'expertise</span>
+          Nos <span className="text-[#c4a46a]">domaines d&apos;expertise</span>
         </h2>
         <p className="mt-4 text-gray-600 max-w-xl mx-auto">
           Une approche sur-mesure pour répondre à vos besoins juridiques avec rigueur et efficacité.
