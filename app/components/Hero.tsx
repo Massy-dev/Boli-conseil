@@ -4,19 +4,19 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center text-white overflow-hidden">
+    <section className="relative h-screen w-full  flex items-center justify-center text-white overflow-hidden">
       {/* 🔹 Image floutée avec zoom progressif */}
       <motion.div
-        className="absolute inset-0 bg-cover bg-center blur-sm"
-        style={{ backgroundImage: "url('/macbook.jpg')" }}
+        className="absolute inset-0  bg-cover bg-center "
+        style={{ backgroundImage: "url('/EquipeBoli.jpg')" }}
         initial={{ scale: 1 }}
         animate={{ scale: 1.05 }}
-        transition={{ duration: 20, ease: "easeInOut", repeat: Infinity, repeatType: "mirror" }}
+        transition={{ duration: 4, ease: "easeInOut", repeat: Infinity, repeatType: "mirror" }}
         aria-hidden="true"
       />
 
       {/* 🔹 Overlay assombrissant */}
-      <div className="absolute inset-0 bg-[#002b45]/80" />
+      <div className="absolute inset-0 bg-black/70" />
 
       {/* 🔹 Texte animé */}
       <motion.div
@@ -27,14 +27,14 @@ export default function Hero() {
       >
         <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
           Votre sécurité juridique,<br className="hidden md:inline" />
-          <span className="text-[#c4a46a]"> notre priorité.</span>
+          <span className="text-[#ffd700]"> notre priorité.</span>
         </h1>
         <p className="text-lg md:text-xl mb-8 text-gray-200">
           Cabinet de conseil juridique dédié aux entreprises et aux particuliers.
         </p>
         <a
           href="#contact"
-          className="inline-block bg-[#c4a46a] text-[#002b45] px-6 py-3 font-semibold rounded-md hover:bg-[#d6b76c] transition-colors"
+          className="inline-block bg-[#ffd700] text-[#002b45] px-6 py-3 font-semibold rounded-md hover:bg-white transition-colors"
         >
           Prendre rendez-vous
         </a>

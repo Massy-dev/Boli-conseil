@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="pt-24">
+      
         {/* Ici les autres sections */}
         <Hero/>
         <About/>
@@ -20,7 +20,6 @@ export default function Home() {
 
         <Footer/>
 
-      </main>
     </>
   );
 }

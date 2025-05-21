@@ -12,25 +12,25 @@ interface Service {
 const services: Service[] = [
   {
     title: "Litiges & Contentieux",
-    icon: <Scale className="w-8 h-8 text-[#c4a46a]" />,
+    icon: <Scale className="w-8 h-8 text-[#002b45]/60" />,
     description:
       "Représentation stratégique dans les procédures juridiques complexes, défense rigoureuse de vos intérêts.",
   },
   {
     title: "Accompagnement des entreprises",
-    icon: <Briefcase className="w-8 h-8 text-[#c4a46a]" />,
+    icon: <Briefcase className="w-8 h-8 text-[#002b45]/60" />,
     description:
       "Conseil juridique sur-mesure pour PME et grandes structures dans leurs prises de décisions stratégiques.",
   },
   {
     title: "Droit du travail",
-    icon: <Users className="w-8 h-8 text-[#c4a46a]" />,
+    icon: <Users className="w-8 h-8 text-[#002b45]/60" />,
     description:
       "Conseil et défense en droit du travail pour employeurs et salariés. Contrats, licenciements, litiges.",
   },
   {
     title: "Rédaction de contrats",
-    icon: <FileText className="w-8 h-8 text-[#c4a46a]" />,
+    icon: <FileText className="w-8 h-8 text-[#002b45]/60" />,
     description:
       "Rédaction et relecture de contrats personnalisés, clairs et juridiquement solides.",
   },
@@ -38,12 +38,12 @@ const services: Service[] = [
 
 export default function Services() {
   return (
-    <section className="bg-[#f9f9f9] text-[#002b45] py-20 px-6" id="services">
+    <section className="bg-gray-900 text-white py-20 px-6" id="services">
       <div className="max-w-6xl mx-auto text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold">
-          Nos <span className="text-[#c4a46a]">domaines d&apos;expertise</span>
+          Nos <span className="text-[#ffd700]">domaines d&apos;expertise</span>
         </h2>
-        <p className="mt-4 text-gray-600 max-w-xl mx-auto">
+        <p className="mt-4 text-gray-200 max-w-xl mx-auto">
           Une approche sur-mesure pour répondre à vos besoins juridiques avec rigueur et efficacité.
         </p>
       </div>
@@ -60,9 +60,9 @@ export default function Services() {
           >
             <div className="flex items-center mb-4">
               {service.icon}
-              <h3 className="ml-4 text-xl font-semibold">{service.title}</h3>
+              <h3 className="ml-4 text-black text-xl font-semibold">{service.title}</h3>
             </div>
-            <p className="text-gray-600">{service.description}</p>
+            <p className="text-gray-900">{service.description}</p>
           </motion.div>
         ))}
       </div>

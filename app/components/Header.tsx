@@ -30,12 +30,12 @@ export default function Header() {
       scrolled ? 'bg-[#002b45]/95 shadow-md' : 'bg-transparent'
     )}>
       <nav className="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
-        <div className="text-xl font-bold text-white">
+        <div className="text-xl font-bold text-[#ffd700]">
           Boli Conseil
         </div>
 
         {/* Menu desktop */}
-        <ul className="hidden md:flex gap-6 text-white font-medium">
+        <ul className="hidden md:flex gap-6 text-[#ffd700] font-medium">
           {links.map(link => (
             <li key={link.name}>
               <Link href={link.href} className="hover:text-[#c4a46a] transition-colors">
