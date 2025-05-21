@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://boli-conseil.fr
+Host: https://boli-conseil-kth3.vercel.app/
 
 # Sitemaps
-Sitemap: https://boli-conseil.fr/sitemap.xml
+Sitemap: https://boli-conseil-kth3.vercel.app/sitemap.xml

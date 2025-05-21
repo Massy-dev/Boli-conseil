@@ -24,17 +24,18 @@ export const metadata: Metadata = {
     "avocat conseil",
     "cabinet d'avocats premium"
   ],
-  authors: [{ name: "Boli Conseil", url: "https://boli-conseil.fr" }],
+  authors: [{ name: "Boli Conseil", url: "https://boli-conseil-kth3.vercel.app/" }],
   creator: "Boli Conseil",
   publisher: "Boli Conseil",
   robots: "index, follow",
   icons: {
     icon: "/favicon.ico",
   },
+  
   openGraph: {
     title: "Boli Conseil – Cabinet de conseil juridique",
     description: "Votre sécurité juridique, notre priorité. Prestations juridiques haut de gamme.",
-    url: "https://boli-conseil.fr",
+    url: "https://boli-conseil-kth3.vercel.app/",
     siteName: "Boli Conseil",
     images: [
       {
@@ -47,6 +48,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Boli Conseil",

@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://boli-conseil.fr",
+  siteUrl: "https://boli-conseil-kth3.vercel.app/",
   generateRobotsTxt: true,
   changefreq: "monthly",
   priority: 0.7,
