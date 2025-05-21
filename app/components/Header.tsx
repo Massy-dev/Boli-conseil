@@ -3,16 +3,47 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 
-const links = [
-  { name: 'Accueil', href: '/' },
-  { name: 'À propos', href: '#about' },
-  { name: 'Expertises', href: '#services' },
-  { name: 'Contact', href: '#contact' },
+const sections = [
+  { id: 'Home', label: 'Accueil' },
+  { id: 'about', label: 'À propos' },
+  { id: 'services', label: 'Expertises' },
+  { id: 'contact', label: 'Contact' },
 ];
 
 export default function Header() {
+  const [activeSection, setActiveSection] = useState('hero');
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.6 } // active when 60% of the section is in view
+    );
+
+    const elements = sections.map((section) =>
+      document.getElementById(section.id)
+    );
+
+    elements.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      elements.forEach((el) => {
+        if (el) observer.unobserve(el);
+      });
+    };
+  }, []);
+
+
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -35,16 +66,22 @@ export default function Header() {
         </div>
 
         {/* Menu desktop */}
-        <ul className="hidden md:flex gap-6 text-[#ffd700] font-medium">
-          {links.map(link => (
-            <li key={link.name}>
-              <Link href={link.href} className="hover:text-[#c4a46a] transition-colors">
-                {link.name}
-              </Link>
+        <ul className="hidden md:flex space-x-8">
+          {sections.map((section) => (
+            <li key={section.id}>
+              <a
+                href={`#${section.id}`}
+                className={`transition-colors duration-300  ${
+                  activeSection === section.id
+                    ? 'text-white border-b-2 border-white pb-1'
+                    : 'text-[#ffd700] hover:text-white'
+                }`}
+              >
+                {section.label}
+              </a>
             </li>
           ))}
-        </ul>
-
+      </ul>
         {/* Menu burger */}
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)} className="text-white">
@@ -56,14 +93,18 @@ export default function Header() {
       {/* Mobile menu */}
       {isOpen && (
         <div className="md:hidden bg-[#002b45] text-white px-4 py-4 space-y-4">
-          {links.map(link => (
+          {sections.map((section) =>(
             <Link
-              key={link.name}
-              href={link.href}
+              key={`#${section.label}`}
+              href={`#${section.id}`}
               onClick={() => setIsOpen(false)}
-              className="block text-lg font-medium hover:text-[#c4a46a] transition-colors"
+              className={`block text-lg font-medium hover:text-[#c4a46a] transition-colors ${
+                activeSection === section.id
+                  ? 'text-[#ffd700] border-b-2 border-[#ffd700] pb-1'
+                  : 'text-white hover:text-[#ffd700]'
+              }`}
             >
-              {link.name}
+              {section.label}
             </Link>
           ))}
         </div>

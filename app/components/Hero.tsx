@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="relative h-screen w-full  flex items-center justify-center text-white overflow-hidden">
+    <section id="Home" className="relative h-screen w-full  flex items-center justify-center text-white overflow-hidden">
       {/* 🔹 Image floutée avec zoom progressif */}
       <motion.div
         className="absolute inset-0  bg-cover bg-center "
