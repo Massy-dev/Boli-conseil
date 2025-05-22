@@ -69,7 +69,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
        <head>
-        <link rel="canonical" href="https://boli-conseil.fr" />
+        <link rel="canonical" href="https://boli-conseil-kth3.vercel.app/" />
       </head>
       <body
         className={inter.className}>
