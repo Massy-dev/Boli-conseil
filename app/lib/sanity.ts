@@ -1,6 +1,6 @@
 // lib/sanity.js
 import { createClient } from '@sanity/client'
-import { siteSettingsQuery } from './queries'
+
 
 export const client = createClient({
   projectId: 'xz8pdv5f',
