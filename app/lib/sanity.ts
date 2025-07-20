@@ -9,7 +9,7 @@ export const client = createClient({
   useCdn: false,
 })
 
-export async function getSiteSettings() {
+export async function getServerSideProps () {
   const query = `*[_type == "siteSettings"][0]{
   heroTitle,
   heroSubtitle,
@@ -20,5 +20,5 @@ export async function getSiteSettings() {
   }
 }`
   const data = await client.fetch(query)
-  return data
+  return {props: { data }}
 }

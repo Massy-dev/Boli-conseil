@@ -1,5 +1,5 @@
 import Navbar from './components/Header';
-import { getSiteSettings } from '@/app/lib/sanity'
+import { getServerSideProps  } from '@/app/lib/sanity'
 import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
@@ -8,7 +8,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer'
 
 export default async  function Home() {
-  const siteSettings = await getSiteSettings()
+  const { props: { data: siteSettings } } = await getServerSideProps ()
 
   return (
     <>
