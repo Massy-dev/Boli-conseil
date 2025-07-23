@@ -4,9 +4,21 @@ import { motion } from 'framer-motion';
 
 
 
+type HeroData = {
+  siteSettings: {
+    heroTitle: string;
+    heroSubtitle: string;
+    heroImage: {
+      asset: {
+        url: string;
+      };
+    };
+    // autres propriétés si besoin
+  };
+}
 
 
-export default function Hero({ data }: { data: any }) {
+export default function Hero({ data }: { data: HeroData["siteSettings"] }) {
   
    
 

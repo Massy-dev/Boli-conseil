@@ -9,24 +9,12 @@ import Footer from './components/Footer'
 
 
 
-type HeroData = {
-  siteSettings: {
-    heroTitle: string;
-    heroSubtitle: string;
-    heroImage: {
-      asset: {
-        url: string;
-      };
-    };
-    // autres propriétés si besoin
-  };
-}
 
 
 export const revalidate = 10 
 
 export default async function Home() {
-  const data: HeroData["siteSettings"] = await getHeroData();
+  const data = await getHeroData();
   return (
     <>
       <Navbar />
