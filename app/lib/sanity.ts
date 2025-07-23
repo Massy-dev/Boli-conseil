@@ -1,5 +1,6 @@
 // lib/sanity.js
 import { createClient } from '@sanity/client'
+import { groq } from 'next-sanity'
 
 
 export const client = createClient({
@@ -9,8 +10,9 @@ export const client = createClient({
   useCdn: false,
 })
 
-export async function getServerSideProps () {
-  const query = `*[_type == "siteSettings"][0]{
+export async function getHeroData () {
+  return client.fetch(
+    groq`*[_type == "siteSettings"][0]{
   heroTitle,
   heroSubtitle,
   heroImage {
@@ -19,6 +21,5 @@ export async function getServerSideProps () {
     }
   }
 }`
-  const data = await client.fetch(query)
-  return {props: { data }}
+  )
 }
