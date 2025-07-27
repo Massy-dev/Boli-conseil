@@ -14,11 +14,21 @@ export default async function Pricing() {
         <h2 className="text-3xl text-black font-bold">{data.title}</h2>
         <p className="text-black mt-2">{data.subtitle}</p>
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
-          {data.plans?.map((plan: any, i: number) => (
-            <div key={i} className="bg-white shadow-md p-6 rounded-lg">
-              <h3 className="text-xl font-semibold">{plan.name}</h3>
-              <p className="text-3xl font-bold my-4">{plan.price}</p>
-              <ul className="text-left space-y-2">
+          {data.plans?.map(
+            (
+              plan: {
+                name: string
+                price: string
+                features: string[]
+                buttonLink: string
+                buttonLabel: string
+              },
+              i: number
+            ) => (
+              <div key={i} className="bg-white shadow-md p-6 rounded-lg">
+                <h3 className="text-xl font-semibold">{plan.name}</h3>
+                <p className="text-3xl font-bold my-4">{plan.price}</p>
+                <ul className="text-left space-y-2">
                 {plan.features.map((feature: string, j: number) => (
                   <li key={j}>• {feature}</li>
                 ))}
