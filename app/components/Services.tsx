@@ -1,40 +1,8 @@
 'use client';
 import { motion } from 'framer-motion';
-import { Briefcase, FileText, Scale, Users } from 'lucide-react';
-import { ReactNode } from 'react';
 
-interface Service {
-  title: string;
-  icon: ReactNode;
-  description: string;
-}
 
-const services: Service[] = [
-  {
-    title: "Litiges & Contentieux",
-    icon: <Scale className="w-8 h-8 text-[#002b45]/60" />,
-    description:
-      "Représentation stratégique dans les procédures juridiques complexes, défense rigoureuse de vos intérêts.",
-  },
-  {
-    title: "Accompagnement des entreprises",
-    icon: <Briefcase className="w-8 h-8 text-[#002b45]/60" />,
-    description:
-      "Conseil juridique sur-mesure pour PME et grandes structures dans leurs prises de décisions stratégiques.",
-  },
-  {
-    title: "Droit du travail",
-    icon: <Users className="w-8 h-8 text-[#002b45]/60" />,
-    description:
-      "Conseil et défense en droit du travail pour employeurs et salariés. Contrats, licenciements, litiges.",
-  },
-  {
-    title: "Rédaction de contrats",
-    icon: <FileText className="w-8 h-8 text-[#002b45]/60" />,
-    description:
-      "Rédaction et relecture de contrats personnalisés, clairs et juridiquement solides.",
-  },
-];
+
 
 type Expertises = {
   _id: string;

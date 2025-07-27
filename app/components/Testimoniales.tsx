@@ -2,26 +2,6 @@
 
 import { motion } from 'framer-motion';
 
-const testimonialss = [
-  {
-    name: "Sophie D.",
-    position: "Directrice RH, PME Lyonnaise",
-    comment:
-      "Boli Conseil a été un partenaire juridique clé dans notre transformation. Rigueur, écoute et efficacité au rendez-vous.",
-  },
-  {
-    name: "Mehdi K.",
-    position: "Entrepreneur",
-    comment:
-      "Un accompagnement complet, une vraie expertise. Merci pour votre soutien dans la création de ma structure.",
-  },
-  {
-    name: "Camille L.",
-    position: "Responsable juridique",
-    comment:
-      "Une équipe pointue, disponible, et orientée solutions. Leur savoir-faire en droit du travail est remarquable.",
-  },
-];
 
 export default function Testimonials({ testimonials }: { testimonials: any[] }) {
   return (

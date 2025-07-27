@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 type Post = {
@@ -22,7 +21,7 @@ export default function Blog({ posts }: BlogProps) {
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-black mb-12">Notre Blog</h2>
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post: any, i: number) => (
+          {posts.map((post, i) => (
             <motion.div
               key={post._id}
               className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition"

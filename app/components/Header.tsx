@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import clsx from 'clsx';
-import { getMenu } from '@/app/lib/sanity' 
 
 const sections = [
   { id: 'Home', label: 'Accueil' },

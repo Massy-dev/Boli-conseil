@@ -3,7 +3,7 @@
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+
 
 type Member = {
   _id: string;
