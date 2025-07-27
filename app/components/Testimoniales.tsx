@@ -2,8 +2,14 @@
 
 import { motion } from 'framer-motion';
 
-
-export default function Testimonials({ testimonials }: { testimonials: any[] }) {
+type TestyMoni = {
+  _id: string,
+  author: string,
+  content: string,
+  position: string,
+  imageUrl: string
+}
+export default function Testimonials({ testimonials }: { testimonials: TestyMoni[] }) {
   return (
     <section className="relative bg-fixed bg-cover bg-center py-20" id="testimonials"
     style={{ backgroundImage: "url('Testimonial.jpg')" }}
