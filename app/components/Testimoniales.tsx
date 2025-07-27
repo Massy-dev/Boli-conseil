@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 
-const testimonials = [
+const testimonialss = [
   {
     name: "Sophie D.",
     position: "Directrice RH, PME Lyonnaise",
@@ -23,7 +23,7 @@ const testimonials = [
   },
 ];
 
-export default function Testimonials() {
+export default function Testimonials({ testimonials }: { testimonials: any[] }) {
   return (
     <section className="relative bg-fixed bg-cover bg-center py-20" id="testimonials"
     style={{ backgroundImage: "url('Testimonial.jpg')" }}
@@ -49,8 +49,8 @@ export default function Testimonials() {
               viewport={{ once: true }}
               className="bg-white/10 backdrop-blur-md text-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300"
             >
-              <p className="text-md mb-4 italic">“{t.comment}”</p>
-              <div className="font-semibold text-[#ffd700]">{t.name}</div>
+              <p className="text-md mb-4 italic">“{t.content}”</p>
+              <div className="font-semibold text-[#ffd700]">{t.author}</div>
               <div className="text-sm text-gray-500 text-[#e5e7eb]">{t.position}</div>
             </motion.div>
           ))}

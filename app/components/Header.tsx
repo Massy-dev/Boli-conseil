@@ -4,15 +4,25 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import clsx from 'clsx';
+import { getMenu } from '@/app/lib/sanity' 
 
 const sections = [
   { id: 'Home', label: 'Accueil' },
   { id: 'about', label: 'À propos' },
   { id: 'services', label: 'Expertises' },
+  { id: 'tarif', label: 'Tarifs'},
+  { id: 'team', label: 'Team' },
+  { id: 'blog', label: 'Blog'},
   { id: 'contact', label: 'Contact' },
+  
 ];
 
-export default function Header() {
+
+
+export default  function Header() {
+
+ 
+
   const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
@@ -65,6 +75,7 @@ export default function Header() {
         </div>
 
         {/* Menu desktop */}
+       
         <ul className="hidden md:flex space-x-8">
           {sections.map((section) => (
             <li key={section.id}>
@@ -81,6 +92,9 @@ export default function Header() {
             </li>
           ))}
       </ul>
+
+
+
         {/* Menu burger */}
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)} className="text-white">

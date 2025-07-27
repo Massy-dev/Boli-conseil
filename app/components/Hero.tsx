@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion';
+import { Url } from 'next/dist/shared/lib/router/router';
 
 
 
@@ -8,6 +9,8 @@ type HeroData = {
   siteSettings: {
     heroTitle: string;
     heroSubtitle: string;
+    boutonTexte: string;
+    
     heroImage: {
       asset: {
         url: string;
@@ -69,7 +72,7 @@ export default function Hero({ data }: { data: HeroData["siteSettings"] }) {
           href="#contact"
           className="inline-block bg-[#ffd700] text-[#002b45] px-6 py-3 font-semibold rounded-md hover:bg-white transition-colors"
         >
-          Prendre rendez-vous
+          {data.boutonTexte}
         </a>
       </motion.div>
      

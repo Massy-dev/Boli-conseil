@@ -7,3 +7,14 @@ export const siteSettingsQuery = `*[_type == "siteSettings"][0]{
     }
   }
 }`
+
+
+export const teamQuery = `
+*[_type == "teamMember"]{
+  _id,
+  name,
+  role,
+  description,
+  "imageUrl": image.asset->url
+}
+`;
