@@ -69,11 +69,11 @@ export default async function BlogPost({ params }: SlugParam) {
               </div>
             )}
           </div>
-          <div className="prose lg:prose-lg prose-neutral py-10 dark:prose-invert mx-auto">
+          <div className="prose lg:prose-lg prose-neutral mt-11  dark:prose-invert mx-auto">
             <PortableText value={post.body} />
             <Link
               href="/#blog"
-              className="inline-block mt-8 text-blue-600 hover:underline font-medium"
+              className="inline-block mt-8  text-blue-600 hover:underline font-medium"
             >
               ← Retour aux articles
             </Link>
