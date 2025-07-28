@@ -78,8 +78,8 @@ export default  function Header() {
         <ul className="hidden md:flex space-x-8">
           {sections.map((section) => (
             <li key={section.id}>
-              <a
-                href={`#${section.id}`}
+              <Link
+                href={`/#${section.id}`}
                 className={`transition-colors duration-300  ${
                   activeSection === section.id
                     ? 'text-white border-b-2 border-white pb-1'
@@ -87,7 +87,7 @@ export default  function Header() {
                 }`}
               >
                 {section.label}
-              </a>
+              </Link>
             </li>
           ))}
       </ul>

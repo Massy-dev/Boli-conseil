@@ -8,7 +8,7 @@ import Testimonials from './components/Testimoniales';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Pricing from './components/Pricing';
-import Blog from './components/Blog'
+import Blog from './blog/Blog'
 
 
 
@@ -22,7 +22,8 @@ export default async function Home() {
   const about = await getAbout();
   const expertise = await getExpertises();
   const testimonials = await getTestimonials()
-  const posts = await getAllPosts()
+  const post = await getAllPosts()
+  
   
 
   return (
@@ -36,7 +37,7 @@ export default async function Home() {
         <Pricing />
         <TeamSection members={team} />
         <Testimonials testimonials={testimonials} />
-        <Blog posts={posts} />
+        <Blog posts={post} />
         <Contact/>
 
         <Footer/>

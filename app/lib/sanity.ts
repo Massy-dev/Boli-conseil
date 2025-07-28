@@ -116,8 +116,23 @@ export async function getAllPosts() {
     excerpt,
     publishedAt,
     author,
-    "imageUrl": mainImage.asset->url
+    mainImage{
+      asset->{url}
+    }
   }`;
   
-  return await client.fetch(getPostsQuery, {}, { next: { revalidate: 60 } })
+  return await client.fetch(getPostsQuery, {}, { next: { revalidate: 10 } })
+}
+
+
+export async function getPost(slug: string) {
+  const query = `*[_type == "post" && slug.current == $slug][0]{
+    title,
+    body,
+    mainImage{ asset->{url} },
+    publishedAt,
+    author
+  }`
+
+  return await client.fetch(query, { slug })
 }
