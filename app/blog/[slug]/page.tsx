@@ -9,11 +9,16 @@ import Contact from '@/app/components/Contact';
 
 export const revalidate = 10
 
+type SlugParam = {
+  params: Promise<{ 
+    slug: string 
+  }>
+}
 
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
- 
-  const post = await getPost(params.slug)
+export async function generateMetadata({ params }: SlugParam) {
+  const { slug } = await params
+  const post = await getPost(slug)
   
   if (!post) return {}
 
@@ -28,9 +33,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
- 
-  const post = await getPost(params.slug)
+export default async function BlogPost({ params }: SlugParam) {
+  const { slug } = await params
+  const post = await getPost(slug)
 
   if (!post) return notFound()
     const formattedDate = new Date(post.publishedAt).toLocaleDateString('fr-FR', {
