@@ -9,16 +9,9 @@ import Contact from '@/app/components/Contact';
 
 export const revalidate = 10
 
-type SlugParam={
-  params: { 
-    slug: string 
-  }
-   
-  
-}
 
 
-export async function generateMetadata({ params }: SlugParam) {
+export async function generateMetadata({ params }: { params: { slug: string } }) {
  
   const post = await getPost(params.slug)
   
@@ -35,7 +28,7 @@ export async function generateMetadata({ params }: SlugParam) {
 }
 
 
-export default async function BlogPost({ params }: SlugParam) {
+export default async function BlogPost({ params }: { params: { slug: string } }) {
  
   const post = await getPost(params.slug)
 
