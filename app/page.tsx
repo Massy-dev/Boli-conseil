@@ -1,5 +1,5 @@
 import Navbar from './components/Header';
-import { getHeroData, getTeamMembers, getAbout, getExpertises, getTestimonials, getAllPosts } from '@/app/lib/sanity'
+import { getHeroData, getTeamMembers, getAbout, getExpertises, getTestimonials, getAllPosts, getPricing } from '@/app/lib/sanity'
 import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
@@ -23,6 +23,7 @@ export default async function Home() {
   const expertise = await getExpertises();
   const testimonials = await getTestimonials()
   const post = await getAllPosts()
+  const pricing = await getPricing()
   
   
 
@@ -34,8 +35,8 @@ export default async function Home() {
         <Hero data={data} />
         <About data={about} />
         <Services expertises={expertise}/>
-        <Pricing />
-        <TeamSection members={team} />
+        <Pricing pricing={pricing} />
+        <TeamSection team={team} />
         <Testimonials testimonials={testimonials} />
         <Blog posts={post} />
         <Contact/>

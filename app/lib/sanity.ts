@@ -28,12 +28,20 @@ export async function getHeroData () {
 
 export async function getTeamMembers() {
   const teamQuery = `
-  *[_type == "teamMember"]{
-    _id,
-    name,
-    role,
-    description,
-    "imageUrl": image.asset->url
+  *[_type == "teamMember"][0]{
+    title,
+    subtitle,
+    teamMembers[]{
+      name,
+      title,
+      description,
+      location,
+      languages,
+      image{
+        asset->{url}
+      }
+    }
+    
   }
   `;
   return await client.fetch(teamQuery);
@@ -94,12 +102,16 @@ export async function getPricing() {
   const pricingQuery = `*[_type == "pricing"][0]{
     title,
     subtitle,
+    description,
     plans[]{
       name,
       price,
       features,
       buttonLabel,
-      buttonLink
+      buttonLink,
+      popular,
+      whatsappMessage,
+      description
     }
   }`
 

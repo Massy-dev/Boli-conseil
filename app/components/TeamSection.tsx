@@ -1,68 +1,55 @@
-'use client';
+// components/TeamSection.tsx
+'use client'
 
-import { useKeenSlider } from 'keen-slider/react';
-import 'keen-slider/keen-slider.min.css';
-import { motion } from 'framer-motion';
-
-
-type Member = {
-  _id: string;
-  name: string;
-  role: string;
-  description: string;
-  imageUrl: string;
-};
-
-
-
-export default function TeamSection({ members }: { members: Member[] }) {
-  const [sliderRef] = useKeenSlider<HTMLDivElement>({
-    loop: true,
-    mode: 'snap',
-    slides: {
-      perView: 1.1,
-      spacing: 10,
-    },
-    breakpoints: {
-      '(min-width: 768px)': {
-        slides: { perView: 3, spacing: 24 },
-      },
-    },
-  });
+export default function TeamSection({ team }: { team: any }) {
+console.log(team)
+  if (!team) {
+    return <div>Chargement...</div>
+  }
 
   return (
-    <section className="px-4 py-16 bg-neutral-950" id="team">
-      <div className="max-w-6xl mx-auto">
-        <motion.h2
-          className="text-3xl text-white font-bold text-center mb-12"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Notre Équipe
-        </motion.h2>
-
-        <div ref={sliderRef} className="keen-slider">
-          {members.map((member, index) => (
-            <motion.div
+    <section className="bg-gray-950 text-white py-16 px-6 lg:px-20" id="team">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-4xl font-bold text-center text-[#ffd700] mb-4">
+        {team.title}
+        </h2>
+        <p className="text-center text-white mb-12">
+        {team.subtitle}
+        </p>
+        <div className="grid md:grid-cols-3 gap-10">
+                {team.teamMembers.map((
+                member: {
+                  name: string
+                  title: string
+                  description: string
+                  location: string
+                  languages: string
+                  image: {
+                    asset: {
+                      url: string
+                    }
+                  }
+                }, index: number) => (
+            <div
               key={index}
-              className="keen-slider__slide"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="bg-gray-900 rounded-2xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center"
             >
-              <div className="bg-gray-50 p-6 ml-5  rounded-2xl shadow hover:shadow-lg transition">
+              <div className="w-28 h-28 mb-4 rounded-full overflow-hidden border-4 border-[#ffd700]">
                 <img
-                  src={member.imageUrl}
+                  src={member.image.asset.url}
                   alt={member.name}
-                  className="w-full h-48 object-cover rounded-xl mb-4"
+                  width={112}
+                  height={112}
+                  className="object-cover w-full h-full"
                 />
-                <h3 className="text-lg font-semibold">{member.name}</h3>
-                <p className="text-sm text-indigo-600">{member.role}</p>
-                <p className="text-sm text-gray-600 mt-2">{member.description}</p>
               </div>
-            </motion.div>
+              <h3 className="text-xl font-semibold text-white">{member.name}</h3>
+              <p className="text-[#ffd700] text-sm mb-2">{member.title}</p>
+              <p className="text-sm text-gray-400 mb-3">{member.description}</p>
+              <p className="text-xs text-gray-400 italic">
+                📍 {member.location} | 🌍 {member.languages}
+              </p>
+            </div>
           ))}
         </div>
       </div>
