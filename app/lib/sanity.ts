@@ -33,7 +33,7 @@ export async function getTeamMembers() {
     subtitle,
     teamMembers[]{
       name,
-      title,
+      role,
       description,
       location,
       languages,
@@ -102,7 +102,6 @@ export async function getPricing() {
   const pricingQuery = `*[_type == "pricing"][0]{
     title,
     subtitle,
-    description,
     plans[]{
       name,
       price,

@@ -3,11 +3,29 @@ import { CheckCircle, Star, MessageCircleMore } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 
-export const revalidate = 10 // ISR toutes les 10 secondes
+type TypePricing = {
+  name: string
+  price: string
+  features: string[]
+  buttonLabel: string
+  buttonLink: string
+  popular: boolean
+  whatsappMessage: string
+  description: string
+}
 
+type DataPrice = {
+  title:string
+  subtitle:string
+  plans:TypePricing[]
+}
 
-export default  function Pricing({ pricing }: { pricing: any }) {
+export default function Pricing({ pricing }: { pricing: DataPrice }) {
  
+  if (!pricing || ! pricing.plans){
+    return <div>Chargement...</div>
+  }
+    
   
   return (
     <section className="py-14 bg-gray-50" id="tarif">
@@ -17,18 +35,7 @@ export default  function Pricing({ pricing }: { pricing: any }) {
         {pricing.subtitle}
         </p>
         <div className="grid md:grid-cols-3 gap-8">
-            {pricing.plans.map((
-            plan: {
-              name: string
-              price: string
-              features: string[]
-              buttonLink: string
-              buttonLabel: string
-              popular: boolean
-              whatsappMessage: string
-              description: string
-            },
-            idx: number
+            {pricing.plans.map((plan,idx
           
           ) => (
             <motion.div

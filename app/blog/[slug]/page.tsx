@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: SlugParam) {
 
   return {
     title: post.title,
-    description: post.body?.[0]?.children?.[0]?.text?.slice(0, 150) || '',
+    description: post.excerpt || post.title,
     openGraph: {
       title: post.title,
       images: [post.mainImage?.asset?.url],
