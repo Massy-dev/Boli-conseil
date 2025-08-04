@@ -68,8 +68,8 @@ export default function Pricing({ pricing }: { pricing: DataPrice }) {
                   </li>
                 ))}
               </ul>
-              <a
-                href={`https://wa.me/2250749200389?text=${encodeURIComponent(plan.whatsappMessage || '')}`}
+              <a                      
+                href={`https://wa.me/2250594564166?text=${encodeURIComponent(plan.whatsappMessage || '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-8 w-full inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#ffd700] text-black rounded-lg hover:bg-black hover:text-[#ffd700] transition"

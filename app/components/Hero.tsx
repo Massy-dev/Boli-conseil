@@ -1,5 +1,5 @@
 'use client'
-
+import { CheckCircle, Star, MessageCircleMore } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 
@@ -62,13 +62,13 @@ export default function Hero({ data }: { data: HeroData["siteSettings"] }) {
               <br className="hidden md:inline" />
            
           
-          <span className="text-[#ffd700]"> notre priorité.</span>
+          <span className="text-[#ffd700]"></span>
         </h1>
         <p className="text-lg md:text-xl mb-8 text-gray-200">
           {heroSubtitle}
         </p>
         <a
-          href="#contact"
+          href={`https://wa.me/2250594564166?text=${encodeURIComponent("Bonjour, je souhaite une consultation")}`}
           className="inline-block bg-[#ffd700] text-[#002b45] px-6 py-3 font-semibold rounded-md hover:bg-white transition-colors"
         >
           {data.boutonTexte}
