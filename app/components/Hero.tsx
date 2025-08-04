@@ -1,5 +1,4 @@
 'use client'
-import { CheckCircle, Star, MessageCircleMore } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 
